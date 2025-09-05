@@ -1,35 +1,38 @@
 # th_fonts
 
-รวมฟอนต์ภาษาไทยสำหรับงานเอกสารและงานพัฒนาโปรแกรม  
-โดยเฉพาะ **TH Sarabun New (ฟอนต์สารบรรณ)** ซึ่งเป็นฟอนต์มาตรฐานราชการไทย  
-เปิดให้ใช้งานได้ฟรี (SIL Open Font License) ไม่มีข้อจำกัดลิขสิทธิ์  
+คลังฟอนต์ภาษาไทย (ราชการ) สำหรับใช้งานในโค้ด/เว็บ  
+หลัก ๆ คือ **TH Sarabun New (สารบรรณ)** ภายใต้ SIL Open Font License (OFL)
 
 ---
 
-## 📌 ฟอนต์ที่มีอยู่
-- THSarabunNew.ttf
-- THSarabunNew-Bold.ttf
-- THSarabunNew-Italic.ttf
-- THSarabunNew-BoldItalic.ttf
+## 🔗 Raw links (ดึงใช้ตรงได้ทันที)
+- Regular: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf
+- Bold: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-Bold.ttf
+- Italic: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-Italic.ttf
+- BoldItalic: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-BoldItalic.ttf
+
+> ถ้ามีไฟล์อื่น ๆ เพิ่ม เติมบรรทัดตามรูปแบบด้านบนได้เลย  
+> โครงสร้างลิงก์: `https://raw.githubusercontent.com/gwagk/th_fonts/main/<ชื่อไฟล์>.ttf`
+
+### ตรึงเวอร์ชัน (แนะนำเวลาขึ้นโปรดักชัน)
+ใช้ commit hash แทน `main` เช่น
+
+หา `<commit-hash>` ได้จากปุ่ม **History** ของไฟล์ แล้วกดเข้า commit นั้น
 
 ---
 
-## 🚀 วิธีใช้งาน
-
-### 1) ติดตั้งในเครื่อง (Windows/Mac/Linux)
-- ดาวน์โหลดไฟล์ `.ttf` ไปที่เครื่อง  
-- ดับเบิลคลิกที่ไฟล์ → กด **Install**  
-- จากนั้นจะใช้งานได้ใน Word, PowerPoint, Google Docs และซอฟต์แวร์อื่น ๆ  
-
-### 2) ใช้กับ Python (matplotlib)
+## 🐍 ใช้กับ Python (matplotlib)
 ```python
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import urllib.request, tempfile, os
 
-# โหลดฟอนต์จาก repo (Raw link)
-font_path = "https://raw.githubusercontent.com/<username>/th_fonts/main/THSarabunNew.ttf"
-thai_font = fm.FontProperties(fname=font_path)
+RAW = "https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf"
+tmp = tempfile.mkdtemp()
+fp = os.path.join(tmp, "THSarabunNew.ttf")
+urllib.request.urlretrieve(RAW, fp)
 
-plt.title("ทดสอบกราฟภาษาไทย", fontproperties=thai_font, fontsize=18)
-plt.plot([1,2,3], [1,4,9])
-plt.show()
+thai = fm.FontProperties(fname=fp)
+plt.figure(figsize=(6,3))
+plt.text(0.5, 0.6, "สวัสดีครับ", fontproperties=thai, fontsize=24, ha="center")
+plt.axis("off"); plt.tight_layout(); plt.show()
