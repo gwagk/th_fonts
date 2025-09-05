@@ -1,23 +1,89 @@
 # th_fonts
 
-คลังฟอนต์ภาษาไทย (ราชการ) สำหรับใช้งานในโค้ด/เว็บ  
-หลัก ๆ คือ **TH Sarabun New (สารบรรณ)** ภายใต้ SIL Open Font License (OFL)
+คลังฟอนต์ภาษาไทยสำหรับงานเอกสาร/เว็บ/โค้ด  
+รวบรวมฟอนต์มาตรฐานราชการไทย เช่น TH Sarabun, TH Baijam, TH Chakra Petch ฯลฯ  
+ทุกฟอนต์แจกฟรีภายใต้ **SIL Open Font License (OFL)**
 
 ---
 
-## 🔗 Raw links (ดึงใช้ตรงได้ทันที)
-- Regular: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf
-- Bold: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-Bold.ttf
-- Italic: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-Italic.ttf
-- BoldItalic: https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew-BoldItalic.ttf
+## 📂 รายชื่อฟอนต์ + Raw links
 
-> ถ้ามีไฟล์อื่น ๆ เพิ่ม เติมบรรทัดตามรูปแบบด้านบนได้เลย  
-> โครงสร้างลิงก์: `https://raw.githubusercontent.com/gwagk/th_fonts/main/<ชื่อไฟล์>.ttf`
+> โครงสร้างลิงก์:  
+> ```
+> https://raw.githubusercontent.com/gwagk/th_fonts/main/<ชื่อไฟล์>.ttf
+> ```
 
-### ตรึงเวอร์ชัน (แนะนำเวลาขึ้นโปรดักชัน)
-ใช้ commit hash แทน `main` เช่น
+### 🔹 TH Sarabun New
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20BoldItalic.ttf)  
 
-หา `<commit-hash>` ได้จากปุ่ม **History** ของไฟล์ แล้วกดเข้า commit นั้น
+### 🔹 TH Sarabun
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabun.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabun%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabun%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabun%20Bold%20Italic.ttf)  
+
+### 🔹 TH Baijam
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Baijam.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Baijam%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Baijam%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Baijam%20Bold%20Italic.ttf)  
+
+### 🔹 TH Chakra Petch
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Chakra%20Petch.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Chakra%20Petch%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Chakra%20Petch%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Chakra%20Petch%20Bold%20Italic.ttf)  
+
+### 🔹 TH Charmonman
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Charmonman.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Charmonman%20Bold.ttf)  
+
+### 🔹 TH Charm of AU
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Charm%20of%20AU.ttf)  
+
+### 🔹 TH Fahkwang
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Fahkwang.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Fahkwang%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Fahkwang%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Fahkwang%20Bold%20Italic.ttf)  
+
+### 🔹 TH KoHo
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20KoHo.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20KoHo%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20KoHo%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20KoHo%20Bold%20Italic.ttf)  
+
+### 🔹 TH Kodchasal
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Kodchasal.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Kodchasal%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Kodchasal%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Kodchasal%20Bold%20Italic.ttf)  
+
+### 🔹 TH Krub
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Krub.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Krub%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Krub%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Krub%20Bold%20Italic.ttf)  
+
+### 🔹 TH Mali Grade6
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Mali%20Grade6.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Mali%20Grade6%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Mali%20Grade6%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Mali%20Grade6%20Bold%20Italic.ttf)  
+
+### 🔹 TH Niramit (และ ITù เวอร์ชัน)
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Niramit%20AS.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Niramit%20AS%20Bold.ttf)  
+- [Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Niramit%20AS%20Italic.ttf)  
+- [BoldItalic](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Niramit%20AS%20Bold%20Italic.ttf)  
+- … (เวอร์ชัน ITù เพิ่มได้ตามชื่อไฟล์จริง)
+
+### 🔹 TH Srisakdi
+- [Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Srisakdi.ttf)  
+- [Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/TH%20Srisakdi%20Bold.ttf)  
 
 ---
 
@@ -33,14 +99,5 @@ fp = os.path.join(tmp, "THSarabunNew.ttf")
 urllib.request.urlretrieve(RAW, fp)
 
 thai = fm.FontProperties(fname=fp)
-plt.figure(figsize=(6,3))
-plt.text(0.5, 0.6, "สวัสดีครับ", fontproperties=thai, fontsize=24, ha="center")
-plt.axis("off"); plt.tight_layout(); plt.show()
-
-
-@font-face {
-  font-family: 'THSarabunNew';
-  src: url('https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf') format('truetype');
-  font-weight: 400; font-style: normal;
-}
-body { font-family: 'THSarabunNew', system-ui, sans-serif; }
+plt.text(0.5, 0.5, "สวัสดีครับ", fontproperties=thai, fontsize=24, ha="center")
+plt.axis("off"); plt.show()
