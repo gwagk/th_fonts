@@ -36,3 +36,11 @@ thai = fm.FontProperties(fname=fp)
 plt.figure(figsize=(6,3))
 plt.text(0.5, 0.6, "สวัสดีครับ", fontproperties=thai, fontsize=24, ha="center")
 plt.axis("off"); plt.tight_layout(); plt.show()
+
+
+@font-face {
+  font-family: 'THSarabunNew';
+  src: url('https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf') format('truetype');
+  font-weight: 400; font-style: normal;
+}
+body { font-family: 'THSarabunNew', system-ui, sans-serif; }
