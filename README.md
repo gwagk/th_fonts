@@ -2,7 +2,51 @@
 
 คลังฟอนต์ภาษาไทยสำหรับงานเอกสาร/เว็บ/โค้ด  
 รวบรวมฟอนต์มาตรฐานราชการไทย เช่น TH Sarabun, TH Baijam, TH Chakra Petch ฯลฯ  
-ทุกฟอนต์แจกฟรีภายใต้ **SIL Open Font License (OFL)**
+> **หมายเหตุเรื่องสิทธิ์ใช้งาน:** ฟอนต์ในคลังนี้ไม่ได้มีใบอนุญาตแบบเดียวกันทั้งหมด จึงไม่ควรเหมารวมว่าเป็น OFL ทุกไฟล์
+>
+> สำหรับ **TH Sarabun New** แหล่งอ้างอิงของตัวฟอนต์ระบุ GNU GPL v2-or-later พร้อม font-embedding exception ส่วน **Sarabun** รุ่นโอเพนซอร์สของ Cadson Demak/Google Fonts ใช้ SIL OFL 1.1
+>
+> ก่อนนำฟอนต์อื่นไป redistribute ให้ตรวจ license ของ family นั้นโดยตรงอีกครั้ง
+
+---
+
+## ⬇️ ดาวน์โหลดง่าย — TH Sarabun New สำหรับงานเอกสารราชการ
+
+ถ้าต้องการเพียงฟอนต์สารบรรณ **ไม่ต้องโหลดทั้ง repository** ใช้ 4 style นี้พอ:
+
+- [TH Sarabun New — Regular](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf)
+- [TH Sarabun New — Bold](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Bold.ttf)
+- [TH Sarabun New — Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Italic.ttf)
+- [TH Sarabun New — Bold Italic](https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20BoldItalic.ttf)
+
+### ดาวน์โหลดทั้ง repository เป็น ZIP
+
+GitHub มี ZIP สาธารณะให้โดยอัตโนมัติ:
+
+**[ดาวน์โหลด th_fonts ทั้งคลัง (.zip)](https://github.com/gwagk/th_fonts/archive/refs/heads/main.zip)**
+
+> ZIP ทั้งคลังเหมาะสำหรับเก็บเป็น archive เท่านั้น — **ไม่แนะนำให้ติดตั้งทุกฟอนต์** เพราะจะทำให้รายการฟอนต์ใน LibreOffice ยาวโดยไม่จำเป็น
+
+### Ubuntu: ดาวน์โหลด TH Sarabun New 4 style ด้วย Terminal
+
+```bash
+mkdir -p ~/.local/share/fonts/THSarabunNew
+cd ~/.local/share/fonts/THSarabunNew
+
+wget -O THSarabunNew.ttf \
+  https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew.ttf
+wget -O 'THSarabunNew Bold.ttf' \
+  'https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Bold.ttf'
+wget -O 'THSarabunNew Italic.ttf' \
+  'https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20Italic.ttf'
+wget -O 'THSarabunNew BoldItalic.ttf' \
+  'https://raw.githubusercontent.com/gwagk/th_fonts/main/THSarabunNew%20BoldItalic.ttf'
+
+fc-cache -f
+fc-match 'TH Sarabun New'
+```
+
+จากนั้นปิดและเปิด LibreOffice ใหม่
 
 ---
 
