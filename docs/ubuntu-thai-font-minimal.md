@@ -196,3 +196,128 @@ OPTIONAL / REMOVE IF UNUSED
 ```
 
 **หลักเดียว:** Core เล็ก เสถียร อ่านไทยได้ และพิมพ์เอกสารราชการได้ครบ
+
+
+---
+
+## 8. Minimal Font Policy — เป้าหมายให้ LibreOffice เลือกฟอนต์ง่าย
+
+ปัญหาที่ต้องการแก้ไม่ใช่แค่พื้นที่ดิสก์ แต่คือ **Font menu pollution**: เมื่อติดตั้ง font collection จำนวนมาก LibreOffice จะแสดง family จำนวนมากจนต้องเลื่อนหารายการยาวเกินความจำเป็น
+
+### กลุ่ม A — MUST KEEP: ระบบ Ubuntu / Browser / Terminal
+
+บนเครื่องภาษาไทย-อังกฤษ ให้ถือกลุ่มนี้เป็นฐานและ **ไม่ถอนเพียงเพราะไม่ได้เลือกชื่อฟอนต์เอง**
+
+- `fonts-noto-core` — Unicode core/fallback
+- `fonts-noto-ui-core` — UI fallback; เครื่องจริงเคยถอนแล้วเกิด □□□ ใน Browser/UI
+- `fonts-noto-mono` — monospace Unicode สำหรับ terminal/code
+- `fonts-dejavu-core` — Linux base fonts
+- `fonts-liberation` — metric-compatible base สำหรับเอกสาร
+
+หลัก: package เหล่านี้เป็น infrastructure ของการแสดงผลมากกว่าฟอนต์ตกแต่ง
+
+### กลุ่ม B — KEEP: เปิดเอกสาร Office จากคนอื่น
+
+เก็บเท่าที่จำเป็น:
+
+- `fonts-crosextra-carlito` — metric-compatible กับ Calibri
+- `fonts-crosextra-caladea` — metric-compatible กับ Cambria (ถ้ามี/ใช้งานเอกสารลักษณะนี้)
+- Liberation — รองรับเอกสารที่อิง Times/Arial/Courier metrics
+
+กลุ่มนี้ช่วยลดโอกาส layout เอกสารจาก Windows เพี้ยน โดยไม่ต้องติดตั้ง font collection ขนาดใหญ่
+
+### กลุ่ม C — USER FONT: งานราชการไทย
+
+ติดตั้งเพียง:
+
+- TH Sarabun New Regular
+- TH Sarabun New Bold
+- TH Sarabun New Italic
+- TH Sarabun New Bold Italic
+
+นี่คือชุดที่ผู้ใช้จะเลือกใน LibreOffice เป็นหลัก
+
+### กลุ่ม D — OPTIONAL / REMOVE IF UNUSED
+
+เครื่องไทย-อังกฤษที่ไม่ได้ทำงานหลายภาษา สามารถพิจารณาถอน:
+
+- `fonts-noto-cjk` / CJK Extra — หากไม่ต้องใช้จีน ญี่ปุ่น เกาหลี
+- `fonts-noto-extra`
+- `fonts-noto-ui-extra`
+- `fonts-thai-tlwg` metapackage และ TLWG families ที่ไม่ได้ใช้
+- decorative/display font collections อื่น ๆ
+
+`fonts-thai-tlwg` เป็น metapackage ที่ดึงหลาย family เช่น Garuda, Kinnari, Laksaman, Loma, Norasi, Purisa, Sawasdee, Waree และ TLWG families อื่น ๆ ดังนั้นถ้าเป้าหมายคือ LibreOffice แบบลีน ไม่ควรติดตั้งทั้งชุดเพียงเพราะชื่อว่า “Thai fonts”
+
+### Target font menu
+
+แนวคิดไม่ใช่บังคับให้เหลือจำนวน family ตายตัว แต่ให้รายการที่ผู้ใช้เห็นเป็นกลุ่มเล็กและมีเหตุผล:
+
+```text
+SYSTEM / FALLBACK
+Noto Sans / Noto Serif / Noto Mono
+DejaVu Sans / Serif / Mono
+Liberation Sans / Serif / Mono
+
+OFFICE COMPATIBILITY
+Carlito
+Caladea
+
+THAI OFFICIAL
+TH Sarabun New
+```
+
+หมายเหตุ: package หนึ่งอาจมีหลาย family/style และบาง font อาจถูกติดตั้งเป็น dependency ของ desktop/application จึงห้ามลบจากชื่อที่เห็นใน LibreOffice อย่างเดียว
+
+### Audit ก่อน Clean
+
+```bash
+# package fonts ที่ติดตั้ง
+dpkg -l | awk '/^ii/ && $2 ~ /^fonts-/ {print $2}' | sort
+
+# family ที่ Fontconfig เห็นจริง
+fc-list : family | sort -u
+
+# ตรวจ Thai fallback
+fc-match "sans-serif:lang=th"
+
+# ตรวจ UI/general fallback
+fc-match sans-serif
+
+# ตรวจ monospace
+fc-match monospace
+
+# ตรวจฟอนต์งานราชการ
+fc-match "TH Sarabun New"
+```
+
+จากนั้นค่อยเลือก package ที่จะถอน และ **simulate ทีละกลุ่ม** ห้ามยิง remove รายการใหญ่รวดเดียว
+
+---
+
+## 9. Incident: The □□□ Incident
+
+ระหว่างทดลองลดจำนวนฟอนต์บน Ubuntu มีการจำลองตรวจแล้วถอน font packages ที่คิดว่าเป็นของเกิน หลังถอนพบอาการทันทีใน graphical session:
+
+1. Terminal ที่กำลังเปิดใช้งานอยู่ปิด/หลุดอย่างผิดปกติ ซึ่งก่อนหน้านี้ไม่เคยพบอาการลักษณะนี้
+2. ข้อความจำนวนมากบน Browser กลายเป็นสี่เหลี่ยม `□□□□`
+3. UI/fallback ภาษาไทยเสียหาย
+4. ต้องติดตั้ง font system/fallback กลับและ rebuild Fontconfig cache
+
+เหตุการณ์เกิดหลังการถอน font packages รวมถึง `fonts-noto-ui-core` แต่ **ยังไม่มี log หรือ reproduction ที่พิสูจน์ว่า package ตัวเดียวเป็นสาเหตุของ Terminal ปิด** จึงบันทึกเป็น temporal association ไม่ใช่ข้อสรุปเชิงสาเหตุ
+
+### Recovery
+
+```bash
+sudo apt update
+sudo apt install fonts-noto-core fonts-noto-ui-core fonts-noto-mono
+fc-cache -f -v
+```
+
+แล้ว logout/login หรือ reboot หาก application เดิมยังถือ font cache เก่า
+
+### Lesson learned
+
+> ฟอนต์ระบบไม่ใช่ของตกแต่งทั้งหมด บาง package เป็น fallback infrastructure ที่ Browser, Desktop UI และ Terminal ใช้โดยอ้อม แม้ผู้ใช้ไม่เคยเลือกชื่อ font นั้นเอง
+
+ดังนั้นเป้าหมายของการ Clean คือ **ลด font menu pollution โดยไม่ทำลาย fallback chain** ไม่ใช่ลบให้เหลือน้อยที่สุด
