@@ -87,6 +87,16 @@
 
 ---
 
+## 🐧 Ubuntu / LibreOffice แบบ Lean
+
+สำหรับเครื่องที่ต้องการภาษาไทย + เอกสารราชการ โดยไม่ติดตั้งฟอนต์เกินจำเป็น:
+
+- [คู่มือ Ubuntu + LibreOffice: ชุดฟอนต์ไทยแบบ Lean](docs/ubuntu-thai-font-minimal.md)
+- หลัก: เก็บ System/UI fallback + Office compatibility + TH Sarabun New
+- ก่อนถอนฟอนต์ทุกครั้งใช้ `apt remove --simulate`
+
+---
+
 ## 🐍 ใช้กับ Python (matplotlib)
 ```python
 import matplotlib.pyplot as plt
